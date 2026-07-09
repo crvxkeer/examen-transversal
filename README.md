@@ -1,4 +1,4 @@
 Joao Caicedo 008V - Examen Transversal
 
-Programa en Python que gestiona planes de gimnasio mediante un menú interactivo en consola. 
+Programa en Python que gestiona planes de gimnasio mediante un menú interactivo.
 Permite consultar cupos, buscar planes por rango de precio, actualizar precios, agregar y eliminar planes.
