@@ -23,6 +23,17 @@ inscripciones = [
 ]
 
 # Funciones de validación
+def leer_opcion(opcion):
+    while True:
+        try:
+            opcion = int(input("Ingrese una opcion: "))
+            if opcion <= 0 or opcion > 6:
+                print(" Opcion invalida, ingresa una opcion valida")
+            else:
+                return opcion
+        except ValueError:
+            print(" Opcion invalida, ingresa una opcion valida")
+
 def validar_codigo(codigo):
     return codigo.upper().strip() != "" and all(codigo.upper().strip() not in list(p.keys())[0] for p in planes)
 
