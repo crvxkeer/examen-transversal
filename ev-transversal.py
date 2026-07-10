@@ -24,7 +24,7 @@ inscripciones = [
 
 # Funciones de validación
 def validar_codigo(codigo):
-    return codigo.strip() != "" and all(codigo.upper() not in list(p.keys())[0] for p in planes)
+    return codigo.upper().strip() != "" and all(codigo.upper().strip() not in list(p.keys())[0] for p in planes)
 
 def validar_nombre(nombre):
     return nombre.strip() != ""
@@ -80,13 +80,13 @@ def buscar_por_precio(minimo, maximo):
 def actualizar_precio(codigo, nuevo_precio):
     for ins in inscripciones:
         clave = list(ins.keys())[0]
-        if clave.upper() == codigo.upper():
+        if clave.upper() == codigo.upper().strip():
             ins[clave][0] = nuevo_precio
             return True
     return False
 
 def agregar_plan():
-    codigo = input("Ingrese código nuevo: ").upper()
+    codigo = input("Ingrese código nuevo: ").upper().strip():
     if not validar_codigo(codigo):
         print("Código inválido o ya existe.")
         return
@@ -138,12 +138,12 @@ def agregar_plan():
 def eliminar_plan(codigo):
     for plan in planes:
         clave = list(plan.keys())[0]
-        if clave.upper() == codigo.upper():
+        if clave.upper() == codigo.upper().strip():
             planes.remove(plan)
             break
     for ins in inscripciones:
         clave = list(ins.keys())[0]
-        if clave.upper() == codigo.upper():
+        if clave.upper() == codigo.upper().strip():
             inscripciones.remove(ins)
             return True
     return False
